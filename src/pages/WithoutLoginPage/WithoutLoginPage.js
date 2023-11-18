@@ -1,10 +1,11 @@
 import React, { Fragment } from "react";
 import Accordian from "../../components/withoutlogincomponent/Accordian";
+import { Link } from "react-router-dom";
 
 const WithoutLoginPage = () => {
   return (
     <Fragment>
-      <div className="bg-[url('https://assets.nflxext.com/ffe/siteui/vlv3/a09bb938-2d90-42ae-986e-5a3e4abf9e77/8eb1e781-3494-4aa4-9405-268ca6473e4c/IN-en-20231113-popsignuptwoweeks-perspective_alpha_website_large.jpg')] h-screen">
+      <div className="bg-[url('https://assets.nflxext.com/ffe/siteui/vlv3/a09bb938-2d90-42ae-986e-5a3e4abf9e77/8eb1e781-3494-4aa4-9405-268ca6473e4c/IN-en-20231113-popsignuptwoweeks-perspective_alpha_website_large.jpg')] h-screen ">
         <div className="px-16">
           <div className="flex justify-between items-center">
             <div>
@@ -19,15 +20,17 @@ const WithoutLoginPage = () => {
                 <select
                   name="languagesection"
                   id="englishhindi"
-                  className="rounded-lg"
+                  className="rounded-lg px-4 py-1"
                 >
                   <option value="English">English</option>
                   <option value="Hindi">Hindi</option>
                 </select>
               </div>
-              <div className="font-bold bg-red-600 text-white px-3 rounded-lg">
-                sign in
-              </div>
+              <Link to={"/login "} className="no-underline">
+                <div className="font-bold bg-red-600 text-white px-4 py-1 rounded-lg">
+                  sign in
+                </div>
+              </Link>
             </div>
           </div>
           <div className="text-center text-white mt-12">
@@ -122,15 +125,47 @@ const WithoutLoginPage = () => {
         <hr className="border" />
 
         <div className="text-center">
-            <h1 className="heading1">Frequently Asked Questions</h1>
-            <Accordian heading={"What is Netflix?"} description={"Netflix is a streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries and more – on thousands of internet-connected devices.You can watch as much as you want, whenever you want, without a single ad – all for one low monthly price. There's always something new to discover, and new TV shows and movies are added every week!"}/>
-            <Accordian heading={"How much does Netflix cost?"} description={"Watch Netflix on your smartphone, tablet, Smart TV, laptop, or streaming device, all for one fixed monthly fee. Plans range from ₹ 149 to ₹ 649 a month. No extra costs, no contracts."}/>
-            <Accordian heading={"Where can I watch?"} description={"Watch anywhere, anytime. Sign in with your Netflix account to watch instantly on the web at netflix.com from your personal computer or on any internet-connected device that offers the Netflix app, including smart TVs, smartphones, tablets, streaming media players and game consoles.You can also download your favourite shows with the iOS, Android, or Windows 10 app. Use downloads to watch while you're on the go and without an internet connection. Take Netflix with you anywhere."}/>
-            <Accordian heading={"How do I cancel?"} description={"Netflix is flexible. There are no annoying contracts and no commitments. You can easily cancel your account online in two clicks. There are no cancellation fees – start or stop your account anytime."}/>
-            <Accordian heading={"What can I watch on Netflix?"} description={"Netflix has an extensive library of feature films, documentaries, TV shows, anime, award-winning Netflix originals, and more. Watch as much as you want, anytime you want."}/>
-            <Accordian heading={"Is Netflix good for kids"} description={"The Netflix Kids experience is included in your membership to give parents control while kids enjoy family-friendly TV shows and films in their own space.Kids profiles come with PIN-protected parental controls that let you restrict the maturity rating of content kids can watch and block specific titles you don’t want kids to see."}/>
+          <h1 className="heading1">Frequently Asked Questions</h1>
+          <Accordian
+            heading={"What is Netflix?"}
+            description={
+              "Netflix is a streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries and more – on thousands of internet-connected devices.You can watch as much as you want, whenever you want, without a single ad – all for one low monthly price. There's always something new to discover, and new TV shows and movies are added every week!"
+            }
+          />
+          <Accordian
+            heading={"How much does Netflix cost?"}
+            description={
+              "Watch Netflix on your smartphone, tablet, Smart TV, laptop, or streaming device, all for one fixed monthly fee. Plans range from ₹ 149 to ₹ 649 a month. No extra costs, no contracts."
+            }
+          />
+          <Accordian
+            heading={"Where can I watch?"}
+            description={
+              "Watch anywhere, anytime. Sign in with your Netflix account to watch instantly on the web at netflix.com from your personal computer or on any internet-connected device that offers the Netflix app, including smart TVs, smartphones, tablets, streaming media players and game consoles.You can also download your favourite shows with the iOS, Android, or Windows 10 app. Use downloads to watch while you're on the go and without an internet connection. Take Netflix with you anywhere."
+            }
+          />
+          <Accordian
+            heading={"How do I cancel?"}
+            description={
+              "Netflix is flexible. There are no annoying contracts and no commitments. You can easily cancel your account online in two clicks. There are no cancellation fees – start or stop your account anytime."
+            }
+          />
+          <Accordian
+            heading={"What can I watch on Netflix?"}
+            description={
+              "Netflix has an extensive library of feature films, documentaries, TV shows, anime, award-winning Netflix originals, and more. Watch as much as you want, anytime you want."
+            }
+          />
+          <Accordian
+            heading={"Is Netflix good for kids"}
+            description={
+              "The Netflix Kids experience is included in your membership to give parents control while kids enjoy family-friendly TV shows and films in their own space.Kids profiles come with PIN-protected parental controls that let you restrict the maturity rating of content kids can watch and block specific titles you don’t want kids to see."
+            }
+          />
         </div>
-        <p className="text-center">Ready to watch? Enter your email to create or restart your membership.</p>
+        <p className="text-center">
+          Ready to watch? Enter your email to create or restart your membership.
+        </p>
         <div className="container1 flex justify-center gap-1">
           <input
             className="email px-8 py-3 w-1/4"

@@ -68,7 +68,7 @@ const WithoutLoginPage = () => {
           <div className="col-md-6">
             <img
               src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/tv.png"
-              class="image"
+              className="image"
             ></img>
           </div>
         </div>
@@ -78,7 +78,7 @@ const WithoutLoginPage = () => {
           <div className="col-md-6">
             <img
               src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/mobile-0819.jpg"
-              class="image"
+              className="image"
             ></img>
           </div>
           <div className="col-md-6">
@@ -101,7 +101,7 @@ const WithoutLoginPage = () => {
           <div className="col-md-6">
             <img
               src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/device-pile-in.png"
-              class="image"
+              className="image"
             ></img>
           </div>
         </div>
@@ -111,7 +111,7 @@ const WithoutLoginPage = () => {
           <div className="col-md-6">
             <img
               src="https://occ-0-2686-3647.1.nflxso.net/dnm/api/v6/19OhWN2dO19C9txTON9tvTFtefw/AAAABVxdX2WnFSp49eXb1do0euaj-F8upNImjofE77XStKhf5kUHG94DPlTiGYqPeYNtiox-82NWEK0Ls3CnLe3WWClGdiJP.png?r=5cf"
-              class="image"
+              className="image"
             ></img>
           </div>
           <div className="col-md-6">

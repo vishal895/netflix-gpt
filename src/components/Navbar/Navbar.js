@@ -16,7 +16,7 @@ const Navbar = () => {
           });
     }
   return (
-    <div className='flex justify-between bg-black text-white py-1 items-center'>
+    <div className='flex justify-between bg-black text-white py-1 items-center '>
         <div className='flex  items-center'>
         <img src="https://www.logo.wine/a/logo/Netflix/Netflix-Logo.wine.svg" className="w-36 h-12" alt="netflix logo" />
             <div className='flex'>

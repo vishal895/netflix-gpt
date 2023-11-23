@@ -7,6 +7,9 @@ import { useDispatch } from 'react-redux';
 import {addmovie} from "../../utlis/Redux/movieslice"
 import MainContainer from '../../components/Browsercomponent/MainContainer';
 import SecondContainer from '../../components/Browsercomponent/SecondContainer';
+import usePopularMovie from '../../utlis/hooks/usePopularMovie';
+import useTopRatedMovie from '../../utlis/hooks/useTopRatedMovie';
+import useUpcommingMovie from '../../utlis/hooks/useUpcommingMovie';
 const BrowserPage = () => {
   const dispatch = useDispatch()
    
@@ -20,6 +23,9 @@ const getNowPlayingMovies = async () =>{
 useEffect(() => {
   getNowPlayingMovies()
 }, [])
+usePopularMovie()
+useTopRatedMovie()
+useUpcommingMovie()
 
 
   return (

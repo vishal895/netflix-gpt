@@ -9,7 +9,8 @@ import LanguageSliceReducer from './LanguageSlice'
     user: usersliceReducer,
     movie:moviesliceReducer,
     GPT:GptSliceReducer,
-    configureLanguage:LanguageSliceReducer
-  },
+    configureLanguage:LanguageSliceReducer 
+  }
+
 })
 export default appstore

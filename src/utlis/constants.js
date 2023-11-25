@@ -31,4 +31,6 @@ export const options = {
       {identifier:"spanish", name:"spanish"},
       
     ]
+
+  export  const open_api = "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"    
   

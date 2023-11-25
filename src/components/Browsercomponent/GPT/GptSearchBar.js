@@ -1,20 +1,57 @@
-import React from 'react'
-import { language } from '../../../utlis/constants'
-import { useSelector } from 'react-redux'
+import React, { useRef } from 'react'
+import { language, options } from '../../../utlis/constants'
+import { useDispatch, useSelector } from 'react-redux'
+import openai from '../../../utlis/openAi/Openai'
+import { addGPT, addGPT2, gptResultMovie } from '../../../utlis/Redux/GptSlice'
 
 const GptSearchBar = () => {
-  
+   const dispatch = useDispatch()
     const langchge = useSelector((store)=> store.configureLanguage.default)
+    const searchtext = useRef(null)
+
+    
+
+    const searchMovieTMDB = async(movie) =>{
+   const data = await fetch('https://api.themoviedb.org/3/search/movie?query=' + movie + '&include_adult=false&language=en-US&page=1', options)
+   const json =  await data.json()
+
+   return json.results
+
+    }
+
+    const handelSearchClick = async () =>{
+
+    
+      
+
+      const searchResult = "Act as a movie Recommendation system and suggest some movie for the query :" + searchtext.current.value + ".only give me names of 5 movie, comma seperated like the example result given ahead. Example Result:Gadar,Sholay,Don,Golmaal,Koi Mil Gaya"
+      const gptsearch = await openai.chat.completions.create({
+        messages: [{ role: 'user', content: searchResult }],
+        model: 'gpt-3.5-turbo',
+      });
+      console.log(gptsearch.choices[0]?.message?.content)      
+      
+      const gptMovie = gptsearch.choices[0]?.message?.content.split(",")
+      
+
+      const  resultinArray = gptMovie.map((movie)=> searchMovieTMDB(movie)) 
+
+      const tmdbresult = await Promise.all(resultinArray)
+
+      dispatch(gptResultMovie({movieName:gptMovie, movieResults:tmdbresult}))
+
+      console.log(tmdbresult) 
+    }
   return (
-    <div className="bg-[url('https://assets.nflxext.com/ffe/siteui/vlv3/a09bb938-2d90-42ae-986e-5a3e4abf9e77/8eb1e781-3494-4aa4-9405-268ca6473e4c/IN-en-20231113-popsignuptwoweeks-perspective_alpha_website_large.jpg')] h-screen ">
+    // 
     <div className='pt-[10%] flex justify-center'>
-        <form className='w-1/2 bg-black grid grid-cols-12'>
-            <input type='text' placeholder={language[langchge].gptSearchPlaceholder} className='p-4 m-4 col-span-9'/>
-            <button className='col-span-3 m-4 py-2 px-4 bg-red-700 text-white'>{language[langchge].search}</button>
+        <form className='w-1/2 bg-black grid grid-cols-12' onSubmit={(e) => e.preventDefault()}>
+            <input ref={searchtext} type='text' placeholder={language[langchge].gptSearchPlaceholder} className='p-4 m-4 col-span-9'/>
+            <button className='col-span-3 m-4 py-2 px-4 bg-red-700 text-white' onClick={handelSearchClick}>{language[langchge].search}</button>
         </form>
 
     </div>
-    </div>
+    
     
   )
 }

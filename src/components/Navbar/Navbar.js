@@ -2,10 +2,15 @@ import React from 'react'
 import { auth } from '../../utlis/Firebase';
 import { useNavigate } from 'react-router-dom';
 import { signOut } from 'firebase/auth';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { addGPT } from '../../utlis/Redux/GptSlice';
+import { type_language } from '../../utlis/constants';
+import { changeLang } from '../../utlis/Redux/LanguageSlice';
 
 const Navbar = () => {
+  const dispatch = useDispatch()
    const user = useSelector(store => store.user)
+   const showselect = useSelector(store => store.GPT.Showgpt)
     const navigate = useNavigate()
     const handelsignout = () => {
         signOut(auth).then(() => {
@@ -14,6 +19,13 @@ const Navbar = () => {
           }).catch((error) => {
             // An error happened.
           });
+    }
+
+    const handelGptClick = () =>{
+      dispatch(addGPT())
+    }
+    const handellangchange = (e) =>{
+      dispatch(changeLang(e.target.value))
     }
   return (
     <div className='flex justify-between bg-black text-white py-1 items-center '>
@@ -29,7 +41,16 @@ const Navbar = () => {
                 </ul>
             </div>
         </div>
-        <div className='flex'>
+        <div className='flex items-center'>
+          {showselect &&(
+          <select className='bg-gray-700 rounded-lg py-2 px-4 mx-4 my-2' onChange={handellangchange}>
+          {type_language.map((lang) =>(
+            <option key={lang.identifier} value={lang.identifier} >{lang.name}</option>
+          ))}
+        </select>
+          )}
+          
+          <button className='bg-purple-800 rounded-lg py-2 px-4 mx-4 my-2' onClick={handelGptClick}>{showselect ? "SearchGPT" : "Go GPT"}</button>
             <img src={user?.photoURL} alt='' className='w-6 h-6'/>
         <div className='font-bold' onClick={handelsignout}>sign out</div>
         </div>

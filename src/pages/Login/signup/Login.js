@@ -109,7 +109,7 @@ const Login = () => {
   }, [])
   return (
     <div className="bg-[url('https://assets.nflxext.com/ffe/siteui/vlv3/a09bb938-2d90-42ae-986e-5a3e4abf9e77/8eb1e781-3494-4aa4-9405-268ca6473e4c/IN-en-20231113-popsignuptwoweeks-perspective_alpha_website_large.jpg')] h-screen ">
-      <div className="px-16">
+      <div className="px-0 md:px-16">
         <img
           src="https://www.logo.wine/a/logo/Netflix/Netflix-Logo.wine.svg"
           className="w-36"
@@ -118,7 +118,7 @@ const Login = () => {
 
         <form
           onSubmit={(e) => e.preventDefault()}
-          className="w-3/12 p-12 bg-black text-white mx-auto bg-opacity-50"
+          className="w-full md:w-3/12 p-12 bg-black text-white mx-auto bg-opacity-50"
         >
           <h1 className="font-bold text-3xl py-1">
             {signup ? "Sign In" : "Sign up"}

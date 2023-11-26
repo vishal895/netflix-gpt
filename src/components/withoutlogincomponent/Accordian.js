@@ -4,7 +4,7 @@ import React from 'react'
 
 const Accordian = ({heading,description}) => {
   return (
-    <div className='w-1/2 mx-auto text-white'>
+    <div className='w-full md:w-1/2 mx-auto text-white'>
     <Accordion className='AccordionBG mb-1 py-2'>
     <AccordionSummary
       expandIcon={<ExpandMoreIcon />}

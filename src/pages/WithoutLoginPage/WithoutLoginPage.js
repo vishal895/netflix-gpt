@@ -6,12 +6,12 @@ const WithoutLoginPage = () => {
   return (
     <Fragment>
       <div className="bg-[url('https://assets.nflxext.com/ffe/siteui/vlv3/a09bb938-2d90-42ae-986e-5a3e4abf9e77/8eb1e781-3494-4aa4-9405-268ca6473e4c/IN-en-20231113-popsignuptwoweeks-perspective_alpha_website_large.jpg')] h-screen ">
-        <div className="px-16">
+        <div className="px-0 md:px-16">
           <div className="flex justify-between items-center">
             <div>
               <img
                 src="https://www.logo.wine/a/logo/Netflix/Netflix-Logo.wine.svg"
-                className="w-36"
+                className="w-24 md:w-36"
                 alt="netflix logo"
               />
             </div>
@@ -20,7 +20,7 @@ const WithoutLoginPage = () => {
                 <select
                   name="languagesection"
                   id="englishhindi"
-                  className="rounded-lg px-4 py-1"
+                  className="md:rounded-lg px-4 py-1 "
                 >
                   <option value="English">English</option>
                   <option value="Hindi">Hindi</option>
@@ -34,7 +34,7 @@ const WithoutLoginPage = () => {
             </div>
           </div>
           <div className="text-center text-white mt-12">
-            <h1 className="font-900 text-5xl w-3/4 mx-auto">
+            <h1 className="font-900 text-xl w-9/12 md:font-900 md:text-5xl  md:w-3/4 mx-auto">
               The biggest Indian hits. The best Indian stories. All streaming
               here.
             </h1>
@@ -46,18 +46,18 @@ const WithoutLoginPage = () => {
           </div>
           <div className="flex gap-2  justify-center">
             <input
-              className="email px-6 py-2 w-1/4"
+              className="email px-6 py-2 w-1/2 md:w-1/4 mt-6"
               type="email"
               name=""
               id=""
               placeholder="Emailaddress"
             />
-            <div className="px-6 py-2 bg-red-700 text-white">GET STARTED</div>
+            <div className="px-2 md:px-6 mt-6 py-2 bg-red-700 text-white ">GET STARTED</div>
           </div>
         </div>
       </div>
       <div className="px-16 bg-black text-white">
-        <div className="flex justify-between items-center">
+        <div className="flex flex-col justify-between items-center md:flex-row">
           <div className="col-md-6">
             <h1 className="heading1">Enjoy on your TV.</h1>
             <p className="paragraph2">
@@ -74,7 +74,7 @@ const WithoutLoginPage = () => {
         </div>
         <hr className="border" />
 
-        <div className="flex justify-between items-center">
+        <div className="flex flex-col justify-between items-center md:flex-row">
           <div className="col-md-6">
             <img
               src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/mobile-0819.jpg"
@@ -90,7 +90,7 @@ const WithoutLoginPage = () => {
         </div>
         <hr className="border" />
 
-        <div className="flex justify-between items-center">
+        <div className="flex flex-col justify-between items-center md:flex-row">
           <div className="col-md-6">
             <h1 className="heading1">Watch everywhere.</h1>
             <p className="paragraph2">
@@ -107,7 +107,7 @@ const WithoutLoginPage = () => {
         </div>
         <hr className="border" />
 
-        <div className="flex justify-between items-center">
+        <div className="flex flex-col justify-between items-center md:flex-row">
           <div className="col-md-6">
             <img
               src="https://occ-0-2686-3647.1.nflxso.net/dnm/api/v6/19OhWN2dO19C9txTON9tvTFtefw/AAAABVxdX2WnFSp49eXb1do0euaj-F8upNImjofE77XStKhf5kUHG94DPlTiGYqPeYNtiox-82NWEK0Ls3CnLe3WWClGdiJP.png?r=5cf"
@@ -168,13 +168,13 @@ const WithoutLoginPage = () => {
         </p>
         <div className="container1 flex justify-center gap-1">
           <input
-            className="email px-8 py-3 w-1/4"
+            className="email px-6 py-2 w-1/2 md:w-1/4 mt-6"
             type="email"
             name=""
             id=""
             placeholder="Emailaddress"
           />
-          <div className="px-8 py-3 bg-red-700">GET STARTED</div>
+          <div className="px-2 md:px-6 mt-6 py-2 bg-red-700 text-white">GET STARTED</div>
         </div>
         <br></br>
 

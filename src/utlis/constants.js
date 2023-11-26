@@ -32,5 +32,5 @@ export const options = {
       
     ]
 
-  export  const open_api = "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"    
+  export  const open_api = process.env.process.env.REACT_APP_open_api   
   
